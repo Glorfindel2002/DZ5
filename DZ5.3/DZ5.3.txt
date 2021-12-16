@@ -1,0 +1,24 @@
+#include <iostream>
+#include "Energy.h"
+
+int main()
+{
+    Energy newEnergy;
+
+    std::cout << "Possible measurements are J, CAL, ERG and eV.\n";
+    std::cout << "Enter value and measurement units: ";
+    std::cin >> newEnergy;
+    std::cout << "Enter new units to convert: ";
+    Units tmp;
+    std::cin >> tmp;
+
+    std::cout << newEnergy.getValue() << ' ';
+    std::cout << newEnergy.getUnit() << '\n';
+    newEnergy.convert(tmp);
+    std::cout << newEnergy;
+
+    newEnergy.setValue(20115);
+    std::cout << newEnergy.getValue() << ' ' << newEnergy.getUnit() << '\n';
+
+    return 0;
+}
